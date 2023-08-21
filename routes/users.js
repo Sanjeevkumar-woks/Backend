@@ -1,7 +1,7 @@
 import { genPassword, addUser, getUserByName } from "../helper.js";
 import bcrypt from "bcrypt";
 import express from "express";
-import jwt from 'jsonwebtoken';
+import jwt from "jsonwebtoken";
 
 const router = express.Router();
 
@@ -45,8 +45,8 @@ router.post("/login", async (req, res) => {
     return;
   }
 
-  const token= jwt.sign({id :userFromDb._id},'MYSECRATE');
-  res.send({"message":"Sucessfull Login","token":token});
+  const token = jwt.sign({ id: userFromDb._id }, "MYSECRATE");
+  res.send({ message: "Sucessfull Login", token: token });
 });
 
 export const usersRouter = router;
